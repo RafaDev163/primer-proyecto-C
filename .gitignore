@@ -1,0 +1,8 @@
+# Compilados
+*.o
+*.exe
+*.bin
+to_do_list
+
+# Archivos temporales
+*~
