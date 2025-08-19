@@ -47,7 +47,7 @@ int main() {
                 listar_tareas(head);
                 printf("\n");
             break;
-        case 3:
+        case 3: {
                 size_t IDX;
                 printf("\n");
                 printf("Escribe el indice de la tarea que quieras marcar como completa: ");
@@ -56,6 +56,7 @@ int main() {
                 escribir_tareas_bin(head, "tareas.bin");
                 printf("HECHO!\n");
                 printf("\n");
+                }       
             break;
         case 4:
                 printf("SALIENDO...\n");
