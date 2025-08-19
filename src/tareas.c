@@ -18,6 +18,17 @@ int liberar_lista(Tarea *head){
     return 0;
 }
 
+void liberar_tareas(Tarea **head) {
+    Tarea *actual = *head;
+    while (actual) {
+        Tarea *tmp = actual->next;
+        free(actual);
+        actual = tmp;
+    }
+    *head = NULL; // buena práctica
+}
+
+
 int agregar_nueva_tarea(Tarea **head, const char *nueva_tarea) {
     if (!head || !nueva_tarea || nueva_tarea[0] == '\0') {
         return -1; // argumentos inválidos

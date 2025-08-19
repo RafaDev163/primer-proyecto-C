@@ -41,7 +41,8 @@ int marcar_tarea_por_indice(Tarea *head, size_t index, EstadoTarea estado);
 
 /* Utilitarias */
 void limpiar_buffer();
-int liberar_lista(Tarea *head);
+int liberar_lista(Tarea *head); //funcion usada en int leer_tareas_bin(Tarea **out_head, uint32_t *out_count, const char *nombre_archivo) para liberar listas leidas.
+void liberar_tareas(Tarea **head); //funcion para liberar las tareas en main.c para que no haya riesgo de fuga o riesgo de usar puntero "colgado".
 size_t contar_tareas(const Tarea *head);
 void liberar_tareas(Tarea **head);
 

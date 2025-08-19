@@ -67,8 +67,8 @@ int main() {
             break;
         }
     } while (opc != 4);
-    // Aquí irá el menú principal y llamadas a funciones
-    liberar_lista(head);
+  
+    liberar_tareas(&head);
 
     return 0;
 }
