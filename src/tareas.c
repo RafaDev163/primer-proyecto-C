@@ -28,6 +28,21 @@ void liberar_tareas(Tarea **head) {
     *head = NULL; // buena práctica
 }
 
+size_t contar_tareas(const Tarea *head){
+    size_t n=0; 
+    for(;head;head=head->next) 
+        ++n; 
+    return n;
+}
+
+size_t contar_por_estado(const Tarea *head, EstadoTarea estadot){
+    size_t n=0; 
+    for(;head;head=head->next) {
+        if (head->estado == estadot) 
+            ++n;
+    } 
+    return n;
+}
 
 int agregar_nueva_tarea(Tarea **head, const char *nueva_tarea) {
     if (!head || !nueva_tarea || nueva_tarea[0] == '\0') {
@@ -69,7 +84,7 @@ int marcar_tarea_por_indice(Tarea *head, size_t index, EstadoTarea estado) {
             return 0; // éxito
         }
     }
-    printf("No se encontró la tarea con índice %zu\n", index);
+    fprintf(stderr, "No se encontró la tarea con índice %zu\n", index);
     return 1; // no encontrado
 }
 

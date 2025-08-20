@@ -43,12 +43,13 @@ int marcar_tarea_por_indice(Tarea *head, size_t index, EstadoTarea estado);
 void limpiar_buffer();
 int liberar_lista(Tarea *head); //funcion usada en int leer_tareas_bin(Tarea **out_head, uint32_t *out_count, const char *nombre_archivo) para liberar listas leidas.
 void liberar_tareas(Tarea **head); //funcion para liberar las tareas en main.c para que no haya riesgo de fuga o riesgo de usar puntero "colgado".
-size_t contar_tareas(const Tarea *head);
-void liberar_tareas(Tarea **head);
+size_t contar_tareas(const Tarea *head); // funcion para contar todas las tareas (completas y pendientes)
+size_t contar_por_estado(const Tarea *head, EstadoTarea estado);// funcion para contar tareas dependiendo el estado
+void liberar_tareas(Tarea **head);// funcion para liberar memoria dinamica reservada para la lista de tareas
 
 /* Persistencia (texto plano) */
-int    guardar_en_archivo(const Tarea *head, const char *nombre_archivo);
-int    cargar_desde_archivo(Tarea **head, const char *nombre_archivo);
+int guardar_en_archivo(const Tarea *head, const char *nombre_archivo);
+int cargar_desde_archivo(Tarea **head, const char *nombre_archivo);
 
 /* Almacenamiento en disco .bin */
 int escribir_tareas_bin(const Tarea *head, const char *nombre_archivo);
