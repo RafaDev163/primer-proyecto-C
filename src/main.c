@@ -48,7 +48,7 @@ int main() {
         case 2: {
                 printf("\n");
                 listar_tareas(head);
-                size_t tot = contar_total(head);
+                size_t tot = contar_tareas(head);
                 size_t comp = contar_por_estado(head, TAREA_COMPLETADA);
                 printf("Total: %-10zu | Pendientes: %-10zu | Completadas: %-10zu\n", tot, tot-comp, comp);
                 printf("\n");
